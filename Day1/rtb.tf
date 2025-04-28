@@ -12,11 +12,11 @@ resource "aws_route_table" "PubRT" {
 }
 
 resource "aws_route_table_association" "PubAssoc1" {
-  subnet_id      = aws_subnet.subnets["public_subnet1"].id
+  subnet_id      = aws_subnet.PubSub1.id
   route_table_id = aws_route_table.PubRT.id
 }
 resource "aws_route_table_association" "PubAssoc2" {
-  subnet_id      = aws_subnet.subnets["public_subnet2"].id
+  subnet_id      = aws_subnet.PubSub2.id
   route_table_id = aws_route_table.PubRT.id
 }
 
@@ -34,10 +34,10 @@ resource "aws_route_table" "PrivRT" {
 }
 
 resource "aws_route_table_association" "PrivAssoc1" {
-  subnet_id      = aws_subnet.subnets["private_subnet1"].id
+  subnet_id      = aws_subnet.PrivSub1.id
   route_table_id = aws_route_table.PrivRT.id
 }
 resource "aws_route_table_association" "PrivAssoc2" {
-  subnet_id      = aws_subnet.subnets["private_subnet2"].id
+  subnet_id      = aws_subnet.PrivSub2.id
   route_table_id = aws_route_table.PrivRT.id
 }
